@@ -3,7 +3,7 @@ using System.IO;
 using NUnit.Framework;
 using SnowMaker;
 
-namespace IntegrationTests.cs
+namespace IntegrationTests
 {
     [TestFixture]
     public class File : Scenarios<File.TestScope>
@@ -23,18 +23,18 @@ namespace IntegrationTests.cs
             public TestScope()
             {
                 var ticks = DateTime.UtcNow.Ticks;
-                IdScopeName = string.Format("snowmakertest{0}", ticks);
+                IdScopeName = $"snowmakertest{ticks}";
 
                 DirectoryPath = Path.Combine(Path.GetTempPath(), IdScopeName);
                 Directory.CreateDirectory(DirectoryPath);
             }
 
-            public string IdScopeName { get; private set; }
-            public string DirectoryPath { get; private set; }
+            public string IdScopeName { get; }
+            public string DirectoryPath { get; }
 
             public string ReadCurrentPersistedValue()
             {
-                var filePath = Path.Combine(DirectoryPath, string.Format("{0}.txt", IdScopeName));
+                var filePath = Path.Combine(DirectoryPath, $"{IdScopeName}.txt");
                 return System.IO.File.ReadAllText(filePath);
             }
 

@@ -1,6 +1,6 @@
 namespace SnowMaker
 {
-    class ScopeState
+    internal class ScopeState
     {
         public readonly object IdGenerationLock = new object();
         public long LastId;

@@ -1,20 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowMaker", "SnowMaker\SnowMaker.csproj", "{0AD4FCE5-6968-4B85-9159-50F63D168907}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnowMaker.Azure", "SnowMaker.Azure\SnowMaker.Azure.csproj", "{5F1C31C8-8AAD-4F3E-9192-BA43698B3326}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E1BB869-9152-48ED-9D43-D846800D7DBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnowMaker", "SnowMaker\SnowMaker.csproj", "{87183335-B2BF-4CEC-B561-B723EA0A5385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2D578C72-24A1-4EE0-A5E8-30D76FC297B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{D312CACC-83CF-4104-9E07-7ABA2632F176}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{697EEC17-828B-4AD0-B4BD-4F7422D406F7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{468FD449-DA90-4C2F-B595-B4D5EA828F46}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{00D7CDBC-7F07-4004-80F4-7AA4D7D9E2FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,20 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0AD4FCE5-6968-4B85-9159-50F63D168907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AD4FCE5-6968-4B85-9159-50F63D168907}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AD4FCE5-6968-4B85-9159-50F63D168907}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AD4FCE5-6968-4B85-9159-50F63D168907}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D578C72-24A1-4EE0-A5E8-30D76FC297B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D578C72-24A1-4EE0-A5E8-30D76FC297B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D578C72-24A1-4EE0-A5E8-30D76FC297B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D578C72-24A1-4EE0-A5E8-30D76FC297B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{697EEC17-828B-4AD0-B4BD-4F7422D406F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{697EEC17-828B-4AD0-B4BD-4F7422D406F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{697EEC17-828B-4AD0-B4BD-4F7422D406F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{697EEC17-828B-4AD0-B4BD-4F7422D406F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1C31C8-8AAD-4F3E-9192-BA43698B3326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1C31C8-8AAD-4F3E-9192-BA43698B3326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1C31C8-8AAD-4F3E-9192-BA43698B3326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1C31C8-8AAD-4F3E-9192-BA43698B3326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87183335-B2BF-4CEC-B561-B723EA0A5385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87183335-B2BF-4CEC-B561-B723EA0A5385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87183335-B2BF-4CEC-B561-B723EA0A5385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87183335-B2BF-4CEC-B561-B723EA0A5385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D312CACC-83CF-4104-9E07-7ABA2632F176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D312CACC-83CF-4104-9E07-7ABA2632F176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D312CACC-83CF-4104-9E07-7ABA2632F176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D312CACC-83CF-4104-9E07-7ABA2632F176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D7CDBC-7F07-4004-80F4-7AA4D7D9E2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D7CDBC-7F07-4004-80F4-7AA4D7D9E2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D7CDBC-7F07-4004-80F4-7AA4D7D9E2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D7CDBC-7F07-4004-80F4-7AA4D7D9E2FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAE98E3E-2F50-40B1-921A-5D3DDBE7B72C}
 	EndGlobalSection
 EndGlobal

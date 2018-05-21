@@ -6,12 +6,12 @@ using SnowMaker;
 using System.Text;
 using System.IO;
 
-namespace IntegrationTests.cs
+namespace IntegrationTests
 {
     [TestFixture]
     public class Azure : Scenarios<Azure.TestScope>
     {
-        readonly CloudStorageAccount storageAccount = CloudStorageAccount.DevelopmentStorageAccount;
+        private readonly CloudStorageAccount storageAccount = CloudStorageAccount.DevelopmentStorageAccount;
 
         protected override TestScope BuildTestScope()
         {
@@ -25,19 +25,19 @@ namespace IntegrationTests.cs
 
         public class TestScope : ITestScope
         {
-            readonly CloudBlobClient blobClient;
+            private readonly CloudBlobClient blobClient;
 
             public TestScope(CloudStorageAccount account)
             {
                 var ticks = DateTime.UtcNow.Ticks;
-                IdScopeName = string.Format("snowmakertest{0}", ticks);
-                ContainerName = string.Format("snowmakertest{0}", ticks);
+                IdScopeName = $"snowmakertest{ticks}";
+                ContainerName = $"snowmakertest{ticks}";
 
                 blobClient = account.CreateCloudBlobClient();
             }
 
-            public string IdScopeName { get; private set; }
-            public string ContainerName { get; private set; }
+            public string IdScopeName { get; }
+            public string ContainerName { get; }
 
             public string ReadCurrentPersistedValue()
             {
@@ -45,7 +45,7 @@ namespace IntegrationTests.cs
                 var blob = blobContainer.GetBlockBlobReference(IdScopeName);
                 using (var stream = new MemoryStream())
                 {
-                    blob.DownloadToStream(stream);
+                    blob.DownloadToStreamAsync(stream).Wait();
                     return Encoding.UTF8.GetString(stream.ToArray());
                 }
             }
@@ -53,7 +53,7 @@ namespace IntegrationTests.cs
             public void Dispose()
             {
                 var blobContainer = blobClient.GetContainerReference(ContainerName);
-                blobContainer.Delete();
+                blobContainer.DeleteAsync();
             }
         }
     }

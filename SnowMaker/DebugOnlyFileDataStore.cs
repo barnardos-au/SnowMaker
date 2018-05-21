@@ -4,9 +4,9 @@ namespace SnowMaker
 {
     public class DebugOnlyFileDataStore : IOptimisticDataStore
     {
-        const string SeedValue = "1";
+        private const string SeedValue = "1";
 
-        readonly string directoryPath;
+        private readonly string directoryPath;
 
         public DebugOnlyFileDataStore(string directoryPath)
         {
@@ -15,7 +15,7 @@ namespace SnowMaker
 
         public string GetData(string blockName)
         {
-            var blockPath = Path.Combine(directoryPath, string.Format("{0}.txt", blockName));
+            var blockPath = Path.Combine(directoryPath, $"{blockName}.txt");
             try
             {
                 return File.ReadAllText(blockPath);
@@ -33,7 +33,7 @@ namespace SnowMaker
 
         public bool TryOptimisticWrite(string blockName, string data)
         {
-            var blockPath = Path.Combine(directoryPath, string.Format("{0}.txt", blockName));
+            var blockPath = Path.Combine(directoryPath, $"{blockName}.txt");
             File.WriteAllText(blockPath, data);
             return true;
         }
